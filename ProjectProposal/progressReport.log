@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.15)  18 MAR 2021 16:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.15)  19 MAR 2021 14:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -205,34 +205,30 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+[1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./progressReport.aux)
 
-./progressReport.tex:35: LaTeX Error: \begin{itemize} on input line 24 ended by
- \end{document}.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.35 \end{document}
-                   
-? 
-./progressReport.tex:35: Emergency stop.
- ...                                              
-                                                  
-l.35 \end{document}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
- 
+ ) 
 Here is how much of TeX's memory you used:
- 2120 strings out of 480608
- 28111 string characters out of 5903630
- 273342 words of memory out of 5000000
- 17875 multiletter control sequences out of 15000+600000
- 539290 words of font info for 52 fonts, out of 8000000 for 9000
+ 2125 strings out of 480608
+ 28029 string characters out of 5903630
+ 273332 words of memory out of 5000000
+ 17876 multiletter control sequences out of 15000+600000
+ 539589 words of font info for 53 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  38i,4n,34p,271b,204s stack positions out of 5000i,500n,10000p,200000b,80000s
-./progressReport.tex:35:  ==> Fatal error occurred, no output PDF file produced
-!
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/
+local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on progressReport.pdf (1 page, 67076 bytes).
+PDF statistics:
+ 32 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
