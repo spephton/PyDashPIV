@@ -17,35 +17,31 @@
 
 \section{Introduction and Aims}
 \subsection{Introduction}
-The measurement of velocity is one of the most fundamental parts of fluid mechanical analysis. Flows are characterised by their velocity fields, and from the velocity of a fluid other dynamic parameters, such as pressure, energy losses, and density, can be readily determined. Many methods exist for measuring velocity, but many commonly used methods, such as pitot tubes, restriction plates, or turbine meters only measure velocity at a point or as an average across a section, and may affect flow up and downstream of the measurement device \cite[pp. 109, 469]{munson}. These methods have the advantage of real-time measurement, but they cannot be used to determine the behaviour of a broader flow field within a flow: another method is required. 
+Many methods exist for measuring velocity, but many commonly used methods, such as pitot tubes, restriction plates, or turbine meters only measure velocity at a point or as an average across a section, and may affect flow both up and downstream of the measurement device \cite[pp. 109, 469]{munson}. These methods have the advantage of simplicity of measurement, but they cannot be used to determine the behaviour of a broader flow field within a flow: another method is required. 
 
-Particle Image Velocimetry (henceforth: PIV) is one such method. In PIV, marker objects -- usually small spheres -- with neutral buoyancy are introduced to the portion of the flow to be studied \cite{wikipiv}\footnote{While not appropriate for a more in-depth analysis, Wikipedia provides reasonably good high level summaries of most concepts and is cited here for this reason.}. When appropriately sized for a specific flow, these particles will track the bulk motion -- the advection -- of the flow, with a high degree of accuracy. The velocity of the flow in the area around the particle -- both magnitude and direction -- can then be determined through photography over a known time interval. 
+Particle Image Velocimetry (henceforth: PIV) is one such method. In PIV, marker objects -- usually small spheres -- with neutral buoyancy are introduced to the portion of the flow to be studied \cite{wikipiv}\footnote{While not appropriate for a more in-depth analysis, Wikipedia provides reasonably good high level summaries of most concepts and is cited here for this reason.}. When appropriately sized for a specific flow, these particles will track the bulk motion -- the advection -- of the flow, with a high degree of accuracy. Both the magnitude and direction of the velocity around the particle can then be determined through photography over a known time interval. When many particles are used, the velocity at many points in a flow field can be measured at once, permitting the interpolation of the entire velocity field in a given region of a flow. And, by varying the parameters of the study, like fluid properties, flow rate, particle size, and time interval, flow phenomena at different length and time scales can be modelled. In light of these potential benefits, undergraduate laboratory experiments to introduce the method represent an opportunity for students to learn about a powerful analytical technique. 
 
-This makes PIV a powerful analytical tool that is commonly used when studying flow profiles [CITE ME]. When many particles are used, the velocity at many points in a flow field can be measured at once, permitting the interpolation of the entire velocity field in a given region of a flow. And, by varying the parameters of the study, like fluid properties, flow rate, particle size, and time interval, flow phenomena at different length and time scales can be modelled. In light of these potential benefits, undergraduate laboratory experiments to introduce the method represent an opportunity.
+A typical PIV setup looks at flow in a single thin slice of a broader flow field, which allows assumptions to be made about the scale of resolved features. Modern PIV tends to compute velocity by comparing particle motion between two image frames separated by a time interval, which allows flow direction to be determined (older techniques using less capable cameras analysed the movement of particles within a single frame). Making this time interval short simplifies analysis, ensuring particles are identifiable between frames, and some cameras can record separate images less than a microsecond apart.
 
-With opportunity comes challenges, however. Calculating the velocity at many points at once requires many particles be identified, and their displacements measured either in one frame or across two. 
+Calculating the velocity at many points at once requires many particles be identified, and displacements measured either in one frame or across two. Computer-based image and signal processing techniques are used to extract velocity field information from captured image data and present this information in a readable manner. When computing velocity from a single image, a signal processing technique called autocorrelation can be used, while computing velocity from discrete frames requires the use of cross-correlation techniques.
 
-\paragraph
-what is particle image velocimetry
-how is it accomplished
-why is it useful
-why is the development of this technology useful in this context -- undergraduate laboratory
-what is Dash
-why Dash?
-what should the finished product do?
+Developing a PIV program for undergraduate use will be the focus of this project. This program will use Dash, a declarative web application framework, and Python code to implement PIV analysis, and make analysing, presenting, and exporting data simple and easy. Dash is a good framework for the development of such an application, as it is open-source and designed to make interface implementation and data display (relatively) painless \cite{aboutdash}. Furthermore, being web-based, Dash provides the capacity for the application to be used remotely on almost any computer. The specific feature requirements and implementation details of the application will be determined as part of the project, and development will be carried out in an iterative fashion to manage complexity. 
+
+PIV software is not new, nor is it inaccessible. OpenPIV, for example, is an open-source PIV analysis package available under the GPL\footnote{Referring to the GNU General Public License, an influential ``copyleft" software license that requires derivative software be made available under it's own terms.} \cite{openpiv}. The difference between this software and that which is currently available will be that this project has an explicit and narrow target application: that of teaching about PIV in an undergraduate lab setting. Such software may be further made relevant by the potential for this undergraduate learning to take place remotely: while the hardware required to capture PIV images may be expensive, the analysis can be performed anywhere.
 
 \subsection{Aims}
-Specifically, this project aims to:
+This project aims to develop a PIV application with a didactic focus. This will involve:
 \begin{itemize}
-\item develop a useful and user-friendly PIV application. This will involve: 
-\begin{itemize}
-	\item determining the specific requirements of the end user, deciding which features must be present and which features are simply nice-to-have, prioritising feature and product development.
-	\item Determining the hardware and software operating environment \cite{worksafe}
-	\item Determining the physical test equipment the software is to be used with \cite{wikipiv}
-	\item Creating 
-\end{itemize}
+	\item Determining the specific requirements of the application. Input form, analysis capabilities, and the degree to which the mechanisms of analysis are made visible to the user are all to be determined.
+	\item Creating a development timeline for the application which prioritises essential features first to ensure that deadlines are met, and identifies worthy extensions to essential features for continued development.
+	\item Conducting research to understand the theory behind and parameters of PIV analysis and signal processing to the extent necessary to teach the most important concepts behind them in an engaging way.  This will further involve researching methods for interpreting output of PIV, identifying error sources, limitations, and data transformations that can provide insight into the flow phenomena studied.
+	\item Developing tests to evaluate the performance of the application. This may involve comparing application output with other packages using widely used benchmark input, such as the PIV images available on PIV Challenge \cite{pivchallenge}.
+	\item Potentially developing a lab script that could be used in conjunction with the application that makes use of the application's features and develops students' understanding of the PIV process. 
 \end{itemize}
 
+
+\section{methodology}
+PIV typically involves the study of flow in a single plane of a broader system. To accomplish this, a planar strobe lighting setup is common, with a strobe or laser firing through a cylindrical lens, which spreads the beam out along one axis, and then through a spherical lens which focusses the light to a thin sheet at the area of study. Arising from this is the possibility of parallax error in measurement, from lit particles that are closer or further away from the lens than the centre of the light plane. 
 \bibliographystyle{ieeetr}
 \bibliography{refs}
 
