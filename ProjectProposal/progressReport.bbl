@@ -1,0 +1,83 @@
+\begin{thebibliography}{12}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{{Agile Alliance}(2021)}]{agile}
+{Agile Alliance} (2021).
+\newblock 12 principles behind the agile manifesto.
+\newblock
+  \url{https://www.agilealliance.org/agile101/12-principles-behind-the-agile-manifesto/}.
+\newblock [Online, accessed 2-April-2021].
+
+\bibitem[{Atlassian(2021)}]{jira}
+Atlassian (2021).
+\newblock What is jira used for?
+\newblock
+  \url{https://www.atlassian.com/software/jira/guides/use-cases/what-is-jira-used-for}.
+\newblock [Online, accessed 2-April-2021].
+
+\bibitem[{Blischak~JD(2016)}]{bilschakvcs}
+Blischak~JD, W.~G., Davenport~ER (2016).
+\newblock A quick introduction to version control with git and github.
+\newblock {\em PLoS Comput Biol\/}, {\em 12(1): e1004668\/}.
+\newblock {doi: \url{10.1371/journal.pcbi.1004668}}.
+
+\bibitem[{Bruce R.~Munson(2006)}]{munson}
+Bruce R.~Munson, T. H.~O., Donald F.~Young (2006).
+\newblock {\em Fundamentals of Fluid Mechanics, Fifth Edition\/}.
+\newblock Wiley.
+
+\bibitem[{OpenPIV(2014)}]{openpiv}
+OpenPIV (2014).
+\newblock {OpenPIV: open source particle image velocimetry}.
+\newblock \url{http://www.openpiv.net}.
+\newblock [Online; accessed 31-March-2021].
+
+\bibitem[{{PIV Challenge}(2016)}]{pivchallenge}
+{PIV Challenge} (2016).
+\newblock {PIV Challenge}.
+\newblock \url{https://www.pivchallenge.org}.
+\newblock [Online, accessed 1-April-2021].
+
+\bibitem[{Plotly(2021{\natexlab{a}})}]{dashtut}
+Plotly (2021{\natexlab{a}}).
+\newblock Dash tutorial part 1 : installation.
+\newblock \url{https://dash.plotly.com/installation}.
+\newblock [Online, accessed 1-April-2021].
+
+\bibitem[{Plotly(2021{\natexlab{b}})}]{aboutdash}
+Plotly (2021{\natexlab{b}}).
+\newblock {Introduction to Dash}.
+\newblock \url{https://dash.plotly.com/introduction}.
+\newblock [Online; accessed 31-March-2021].
+
+\bibitem[{Spolsky(2000{\natexlab{a}})}]{joelspecswhy}
+Spolsky, J. (2000{\natexlab{a}}).
+\newblock Painless functional specifications -- part 1: Why bother.
+\newblock
+  \url{https://www.joelonsoftware.com/2000/10/02/painless-functional-specifications-part-1-why-bother/}.
+\newblock [Online, accessed 2-April-2021].
+
+\bibitem[{Spolsky(2000{\natexlab{b}})}]{joelspecshow}
+Spolsky, J. (2000{\natexlab{b}}).
+\newblock Painless functional specifications -- part 2: What's a spec?
+\newblock
+  \url{https://www.joelonsoftware.com/2000/10/03/painless-functional-specifications-part-2-whats-a-spec/}.
+\newblock [Online, accessed 2-April-2021].
+
+\bibitem[{{Wikipedia contributors}(2021{\natexlab{a}})}]{wikipiv}
+{Wikipedia contributors} (2021{\natexlab{a}}).
+\newblock Particle image velocimetry --- {Wikipedia}{,} the free encyclopedia.
+\newblock
+  \url{https://en.wikipedia.org/w/index.php?title=Particle_image_velocimetry&oldid=1012742345}.
+\newblock [Online; accessed 30-March-2021].
+
+\bibitem[{{Wikipedia contributors}(2021{\natexlab{b}})}]{wikistokes}
+{Wikipedia contributors} (2021{\natexlab{b}}).
+\newblock Stokes number --- {Wikipedia}{,} the free encyclopedia.
+\newblock \url{https://en.wikipedia.org/wiki/Stokes_number}.
+\newblock [Online; accessed 30-March-2021].
+
+\end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.15)  1 APR 2021 14:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.15)  2 APR 2021 16:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -177,9 +177,16 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
+(/usr/local/texlive/2020/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip57
+\bibsep=\skip58
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count190
+)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count190
+\l__kernel_color_stack_int=\count191
 \l__pdf_internal_box=\box48
 )
 (./progressReport.aux)
@@ -259,94 +266,100 @@ Package gensymb Info: Using \textmu for \micro on input line 15.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count191
+\scratchcounter=\count192
 \scratchdimen=\dimen156
 \scratchbox=\box49
-\nofMPsegments=\count192
-\nofMParguments=\count193
+\nofMPsegments=\count193
+\nofMParguments=\count194
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count194
+\MPscratchCnt=\count195
 \MPscratchDim=\dimen157
-\MPnumerator=\count195
-\makeMPintoPDFobject=\count196
+\MPnumerator=\count196
+\makeMPintoPDFobject=\count197
 \everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)) (/usr/local/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-))
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Overfull \vbox (1.9891pt too high) has occurred while \output is active []
-
-
 [1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./progressReport.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 9--14
-\OT1/cmtt/m/n/10 / / en . wikipedia . org / w / index . php ? title = Particle 
-_ image _ velocimetry & oldid = 1012742345$\OT1/cmr/m/n/10 ,
+[2] [3] [4] (./progressReport.bbl
+Underfull \hbox (badness 2875) in paragraph at lines 57--62
+[]\OT1/cmr/m/n/10 Spolsky, J. (2000a).  Pain-less func-tional spec-i-fi-ca-tion
+s -- part 1: Why bother.  $\OT1/cmtt/m/n/10 https :
  []
 
-[2])
-Overfull \hbox (83.61945pt too wide) has occurred while \output is active
- \OT1/cmr/m/n/9 A WEB-BASED PYTHON PIV ANALYSIS PROGRAM FOR USE IN UNDERGRADUAT
-E LABORATORY EXPERIMENTS. []
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--62
+\OT1/cmtt/m/n/10 / / www . joelonsoftware . com / 2000 / 10 / 02 / painless -[]
+ functional -[] specifications -[] part -[] 1 -[] why -[]
  []
 
-[3] (./progressReport.aux) ) 
+
+Underfull \hbox (badness 1052) in paragraph at lines 64--69
+[]\OT1/cmr/m/n/10 Spolsky, J. (2000b).  Pain-less func-tional spec-i-fi-ca-tion
+s -- part 2: What's a spec?  $\OT1/cmtt/m/n/10 https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--69
+\OT1/cmtt/m/n/10 / / www . joelonsoftware . com / 2000 / 10 / 03 / painless -[]
+ functional -[] specifications -[] part -[] 2 -[]
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 71--76
+[]\OT1/cmr/m/n/10 Wikipedia con-trib-u-tors (2021a).  Par-ti-cle im-age ve-loci
+me-try --- Wikipedia, the free en-cy-clo-
+ []
+
+
+Underfull \hbox (badness 1205) in paragraph at lines 71--76
+\OT1/cmr/m/n/10 pe-dia.  $\OT1/cmtt/m/n/10 https : / / en . wikipedia . org / w
+ / index . php ? title = Particle _ image _ velocimetry & oldid =
+ []
+
+) [5]
+<timeline.png, id=30, 1099.10625pt x 1184.425pt>
+File: timeline.png Graphic file (type png)
+<use timeline.png>
+Package pdftex.def Info: timeline.png  used on input line 117.
+(pdftex.def)             Requested size: 455.24408pt x 490.56937pt.
+
+Overfull \hbox (2.27618pt too wide) in paragraph at lines 117--118
+ [][] 
+ []
+
+[6 <./timeline.png>] (./progressReport.aux) ) 
 Here is how much of TeX's memory you used:
- 3553 strings out of 480608
- 48876 string characters out of 5903630
- 299912 words of memory out of 5000000
- 19206 multiletter control sequences out of 15000+600000
- 547349 words of font info for 78 fonts, out of 8000000 for 9000
+ 3506 strings out of 480608
+ 46022 string characters out of 5903630
+ 299235 words of memory out of 5000000
+ 19181 multiletter control sequences out of 15000+600000
+ 547650 words of font info for 79 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 38i,5n,34p,1261b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmtt10.pfb>
-Output written on progressReport.pdf (3 pages, 127159 bytes).
+ 38i,5n,34p,1077b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmtt10.pfb>
+Output written on progressReport.pdf (6 pages, 587934 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
