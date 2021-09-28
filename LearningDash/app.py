@@ -27,7 +27,9 @@ app.layout = html.Div([
         options=[
             {'label': 'New York City', 'value': 'NYC'},
             {'label': u'Montréal', 'value': 'MTL'},
-            {'label': 'San Francisco', 'value': 'SF'}
+            {'label': 'San Francisco', 'value': 'SF'},
+            {'label': 'Sydney', 'value': 'SYD'},
+            {'label': 'Melbourne', 'value': 'MEL'}
         ],
         value=['MTL', 'SF'],
         multi=True

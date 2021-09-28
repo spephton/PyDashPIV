@@ -1,6 +1,6 @@
 import numpy as np
 
-def gauss(A): # reduces an augmented matrix, A, to a gaussian echelon form. A is a numpy float ndarray, assumed to have n rows and m entries in each row, m > n, does not test m and n assumptions.
+def gauss(A): # reduces an augmented matrix, A, to a gaussian echelon form. A is a numpy float ndarray, assumed to have n rows and m entries in each row, m > n, does not test m and n assumptions. NOTE: need to improve. Only checks first n columns for pivot  criterion
 	
 	if (A.dtype != 'f'):
 		print('ERROR: input ndarray must be of type "float"')
@@ -9,8 +9,7 @@ def gauss(A): # reduces an augmented matrix, A, to a gaussian echelon form. A is
 	
 	
 	pivotFoundInColumn = np.zeros(len(A[0]))
-
-	for pivot in range (len(A)):
+	for pivot in range(len(A)):
 		for i in range(pivot, len(A)): # swap rows so first nonzero entry in column occurs at pivot row
 			if A[i][pivot] != 0:
 				pivotFoundInColumn[pivot] = 1	# can optimise here, we know col pivot is zero 	in rows pivot through i
@@ -20,10 +19,12 @@ def gauss(A): # reduces an augmented matrix, A, to a gaussian echelon form. A is
 					currentPivotRow = A[pivot] # swap row i with pivot row. first store row.
 					A[pivot] = A[i] # put the i'th row in the pivot row
 					A[i] = currentPivotRow # and put stored row in the i'th row
+					break
 				else:
 					print("error, somehow considering a row above the pivot")
+					return
 				
-	
+		print('HERE' + str(i)+str(pivot)+str(pivotFoundInColumn))
 
 		if pivotFoundInColumn[pivot]: 	# the column has a non-zero entry, (and that entry is in the pivot row)
 			pivVal = A[pivot][pivot]
@@ -65,7 +66,7 @@ def gaussJordan(A):
 B = np.array( [ [2, 1, 1, 5],
 				[4, 1, 3, 9],
 				[-2, 2, 1, 8]], dtype = 'f')
-gaussJordan(B)
+# gaussJordan(B)
 #print(B) # passed
 # Expect: 1 0 0 0
 #		  0 1 0 3
@@ -100,3 +101,10 @@ F = np.array([[2, 1, 4], [4, 2, 0]], dtype = 'f')
 # print(F)
 # Expect 1 0.5 0
 #		 0  0  4	Passed. This is an inconsistent system and hence there are no solutions, and we can't trust this output to mean anything (since it says 0 = 4)
+
+K = np.array([[1, 3, 3, 2, 1], 
+			[2, 6, 9, 5, 1], 
+			[-1, -3, 3, 0, -3]], dtype = 'f')
+			
+gauss(K)
+print(K)
