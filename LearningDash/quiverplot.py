@@ -12,6 +12,7 @@ import plotly.express as px
 import pandas as pd
 import plotly.figure_factory as ff
 import numpy as np
+from dash.dependencies import Input, Output
 
 ## Create dash app
 app = dash.Dash(__name__)
@@ -32,7 +33,7 @@ fig2 = ff.create_quiver(x, y, u, v)
 
 
 ## Layout
-app.layout = html.Div(children = [
+app.layout = html.Div([
 	html.H1(
 		children='Displaying Vector Fields in Plotly/Dash', style={
 		'textAlign': 'center'
@@ -53,8 +54,29 @@ app.layout = html.Div(children = [
 	dcc.Graph(
         id='figure2',
         figure=fig2
-    )
+    ),
+    html.Label('Slide to adjust sampling resolution'),
+    dcc.Slider(
+    	id = 'f2resSlider',
+    	min = 3,
+    	max = 21,
+    	#marks = {i: 'Label {}'.format(i) if i == 3 else str(i) for i in range(3, 6)},
+    	marks = {i: str(i) for i in range(3, 21)},
+    	value = 11,
+    ),
+    html.Div(
+    	id = 'resolutionDescription',
+    	children = 'nelekjlkrj',
+	),
 ])
+
+## Callbacks
+@app.callback(
+	Output(component_id = 'resolutionDescription', component_property = 'children'),
+	Input(component_id = 'f2resSlider', component_property = 'value')
+)
+def updateResolutionDisplayed(input_value):
+	return 'Default resolution: 11x11' if input_value == 11 else '{}x{}'.format(input_value, input_value)
 
 if __name__ == '__main__':
 	app.run_server(debug = True)

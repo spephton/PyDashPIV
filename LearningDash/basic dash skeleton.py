@@ -11,7 +11,7 @@ import pandas as pd
 
 app = dash.Dash(__name__)
 
-app.layout = html.Div(children = [
+app.layout = html.Div([
 	html.H1(
 		children='Displaying Vector Fields in Plotly/Dash', style={
 		'textAlign': 'center'
