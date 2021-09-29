@@ -24,10 +24,7 @@ v = 0*x + 2
 
 fig1 = ff.create_quiver(x, y, u, v)
 
-u = 0*x + 1
-v = 0.5*y
 
-fig2 = ff.create_quiver(x, y, u, v)
 
 
 
@@ -53,7 +50,6 @@ app.layout = html.Div([
     html.H2(children = 'Here is a vector field where the vector varies with positon'),
 	dcc.Graph(
         id='figure2',
-        figure=fig2
     ),
     html.Label('Slide to adjust sampling resolution'),
     dcc.Slider(
@@ -77,6 +73,17 @@ app.layout = html.Div([
 )
 def updateResolutionDisplayed(input_value):
 	return 'Default resolution: 11x11' if input_value == 11 else '{}x{}'.format(input_value, input_value)
+
+@app.callback(
+	Output('figure2', 'figure'),
+	Input('f2resSlider', 'value'),
+)
+def updateFigure(resolution):
+	x, y = np.meshgrid(np.linspace(-3, 3, resolution), np.linspace(-3, 3, resolution))
+	u = 0*x + 1
+	v = 0.5*y
+	fig2 = ff.create_quiver(x, y, u, v)
+	return fig2
 
 if __name__ == '__main__':
 	app.run_server(debug = True)
