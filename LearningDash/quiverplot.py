@@ -83,6 +83,8 @@ def updateFigure(resolution):
 	u = 0*x + 1
 	v = 0.5*y
 	fig2 = ff.create_quiver(x, y, u, v)
+	
+	fig2.update_layout(transition_duration = 500)
 	return fig2
 
 if __name__ == '__main__':
