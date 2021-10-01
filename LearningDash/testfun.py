@@ -33,4 +33,14 @@ print(c)	# 1 3 5
 testfun3(c)
 print(c)	# 1 13 5
 
-# So, how do we modify array elements without changing the original array? We could try doing something like in testfun2 
+# So, how do we modify array elements without changing the original array? We could try doing something like in testfun2 to fork a new data object, undoing what we did, then changing our elements as we wish. Try
+
+def testfun4(x):
+	x = x + 10
+	x = x - 10
+	x[1] = x[1] + 10
+	return x
+	
+d = [1, 3, 5]
+e = testfun4(d)
+print(d)
