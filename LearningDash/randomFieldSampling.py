@@ -84,8 +84,10 @@ def callbackFunction(nclicks, samples):
 	samples = int(samples)
 	if samples <= 0 or samples > 1000:
 		samples = nSamplesDefault
-	
-	return meshFig
+	samplePoints = randomWithinDomain(*domain, samples)
+	velocities = swirlyfield(*samplePoints)
+	randFig = ff.create_quiver(*samplePoints, *velocities)
+	return randFig
 
 
 if __name__ == '__main__':
