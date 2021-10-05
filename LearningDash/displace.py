@@ -35,17 +35,11 @@ def displacePointsBy(points, function, time):
 	'''Perturb points by a velocity field function over interval dt.
 	
 	Units must agree between points in 'Units', field function in 'Units/TimeInterval', time in 'TimeInterval'. Example: 'm', 'm/s', 's'. '''
-	print(*points)
 	velocity = function(*points)
-	#print(type(velocity))
-	listOfPerturbations = []
-	for component in velocity:
-		listOfPerturbations.append(component * time)
-	perturbations = (*listOfPerturbations,)
-	listOfNewPoints = []
-	for i in range(len(points)):
-		listOfNewPoints.append(points[i] + perturbations[i])
-	updatedPoints = (*listOfNewPoints,)
+	# The following pattern is called 'list comprehension'. See footnote for more.
+	perturbations = [vComponent * time for vComponent in velocity]
+	listOfNewPoints = [points[i] + perturbations[i] for i in range(len(points))]
+	updatedPoints = (*listOfNewPoints,) # turn it back into a tuple
 	return updatedPoints
 
 
@@ -87,3 +81,18 @@ def displacePoints(nClicks, existingFigure):
 
 if __name__ == '__main__':
 	app.run_server(debug = True)
+	
+'''>>> mylist = [x*x for x in range(3)] # list comprehension pattern
+
+
+This: 
+
+	listOfNewPoints = []
+	for i in range(len(points)):
+		listOfNewPoints.append(points[i] + perturbations[i])
+	updatedPoints = (*listOfNewPoints,)
+
+can be rewritten with list comprehension as: 
+
+	listOfNewPoints = [points[i] + perturbations [i] for i in range(len(points))]
+	updatedPoints = (*listOfNewPoints,)'''
