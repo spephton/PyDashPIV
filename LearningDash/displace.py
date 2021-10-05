@@ -63,20 +63,32 @@ app.layout = html.Div([
 		}
 	),
 	dcc.Graph(id = 'points-plot'),
-	html.Button(children = f'Advance {dt}s',id = 'displace-button')
+	html.Button(id = 'pause-button', children = 'Pause'),
+	dcc.Interval(
+		id = 'refresh-clock', 
+		interval = 125,
+		n_intervals = 0
+	)
 ])
 
 ## Callbacks
 @app.callback(
 	Output('points-plot', 'figure'),
-	Input('displace-button','n_clicks'),
+	Output('pause-button', 'children'),
+	Input('refresh-clock','n_intervals'),
 	State('points-plot', 'figure'),
+	State('pause-button', 'n_clicks')
 )
-def displacePoints(nClicks, existingFigure):
+def displacePoints(nIntervals, existingFigure, nClicks):
 	global points
-	points = displacePointsBy(points, swirlyfield, 0.1)
-	figure = px.scatter(x = points[0], y = points[1])
-	return figure
+	figure = existingFigure
+	if nClicks == None or nClicks % 2 == 0:
+		points = displacePointsBy(points, swirlyfield, 0.1)
+		figure = px.scatter(x = points[0], y = points[1])
+		pauseButtonLabel = 'Pause'
+	else:
+		pauseButtonLabel = 'Play'
+	return figure, pauseButtonLabel
 
 
 if __name__ == '__main__':
