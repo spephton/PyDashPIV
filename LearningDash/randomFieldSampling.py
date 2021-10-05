@@ -68,7 +68,7 @@ app.layout = html.Div([
 		id = 'randgraph'
 	),
 	html.Div([
-		html.Div('Samples:\u205F', style={'width': 'text-width', 'display': 'inline-block'}),
+		html.Div('Samples:\u205F', style={'width': 'text-width', 'display': 'inline-block'}), # Unicode point U+205F is a space character for formatting purposes
 		dcc.Input(value = '121', id = 'samplesInput', type = 'number', style={'width': '20%', 'display': 'inline-block'}),
 		html.Button('Resample', id = 'resampleButton')
 	])

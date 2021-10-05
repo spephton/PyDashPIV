@@ -37,7 +37,7 @@ app.layout = html.Div([
 	Input(" "),
 	State(" "),
 )
-def callbackFunction(var1, var2, var3)
+def callbackFunction(var1, var2)
 '''
 
 if __name__ == '__main__':
