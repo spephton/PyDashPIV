@@ -38,8 +38,14 @@ def displacePointsBy(points, function, time):
 	print(*points)
 	velocity = function(*points)
 	#print(type(velocity))
-	perturbation = velocity[0] * time, velocity[1] * time
-	updatedPoints = points[0] + perturbation[0], points[1] + perturbation[1]
+	listOfPerturbations = []
+	for component in velocity:
+		listOfPerturbations.append(component * time)
+	perturbations = (*listOfPerturbations,)
+	listOfNewPoints = []
+	for i in range(len(points)):
+		listOfNewPoints.append(points[i] + perturbations[i])
+	updatedPoints = (*listOfNewPoints,)
 	return updatedPoints
 
 
