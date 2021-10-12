@@ -10,7 +10,7 @@ red = np.array([255, 0, 0])
 green = np.array([0, 255, 0])
 blue = np.array([0, 0, 255])
 white = np.array([255, 255, 255])
-print(img.shape)
+print(type(img[0][0][0]))
 img[0][0] = white
 img[0][-1] = red
 img[-1][-1] = green
