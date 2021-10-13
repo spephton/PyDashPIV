@@ -110,8 +110,11 @@ def roll(a, shift, axis=None):
         	# These, taken together, give us a way to map the first 'len - offset' entries from the original array to the last 'len - offset' entries of the results array. That just leaves getting the last 'offset' entries from the original array and moving those to the first 'offset' entries of the results array:
         	# slice(-offset, None) selects the last 'offset' entries of the original array
         	# slice(None, offset) selects the first 'offset' entries of the results array
+        	
+        	# Then rolls has a tuple entry for each axis. If that axis is being rolled, the tuple contains two entries, each being a pair of tuples describing the one of the two steps involved in rolling along that axis. If that axis is not being rolled, the tuple has one entry that simply addresses all elements along that axis. 
         result = np.empty_like(a) # prime a results array
         for indices in itertools.product(*rolls):
+        # This is cool! We take the cartesian product of the rolls array. This gives us a set of tuples that has all combinations required to roll the array one roll at a time, each containing instructions for the two-step roll along whichever axis we're looking at. By zipping these, we get the indices for the parts of the original and results array required for each step of the roll, and can just assign the relevant part of the result array to the relevant part of the original array. Neat!
             arr_index, res_index = zip(*indices)
             print(indices)
             print(f'array index: {arr_index}')
