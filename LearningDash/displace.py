@@ -80,7 +80,8 @@ app.layout = html.Div([
 	State('pause-button', 'n_clicks')
 )
 def displacePoints(nIntervals, existingFigure, nClicks):
-	global points
+	global points # This needs to be fixed. Dash apps are designed to be stateless as an assumption so that multiple server instances can be used to service the same user. All information required in a callback needs to be passed into the callback 
+	# From what I gather, it's totally ok to grab the points value within this function, but mutating it is a bad idea and will lead to state discrepancies. Added to Jira ISSUE NO: PPIV - 1
 	figure = existingFigure
 	if nClicks == None or nClicks % 2 == 0:
 		points = displacePointsBy(points, swirlyfield, 0.1)

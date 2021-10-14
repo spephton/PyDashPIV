@@ -16,8 +16,8 @@ from dash.dependencies import Input, Output, State
 
 
 ## Variables:
-data = {'col1':[1, 2, 3], 'col2': [2, 3, 4], 'col3': [3, 4, 5]}
-df = pd.DataFrame.from_records(data)
+data = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+df = pd.DataFrame(data)
 
 
 
@@ -40,19 +40,41 @@ app.layout = html.Div([
 	),
 	dashtable.DataTable(
 		id = 'correlation-table',
-		columns=[{"name": i, "id": i} for i in df.columns],
-		data = df.to_dict('records')
-	)
+		columns = [{'name': str(i), 'id': str(i)} for i in df.columns],
+#		data = df.to_dict('records')[:],
+		css = [{
+			'selector': 'tr:first-child',
+			'rule': 'display: none',
+		}],
+	),
+	html.Div([
+		html.Button(
+			id = 'left-button',
+			children = 'left'
+		),
+		html.Button(
+			id = 'right-button',
+			children = 'right'
+		)
+	])
 ])
 
 ## Callbacks
-'''@app.callback(
-	Output(componentidstring, componentproperty),
-	Input(" "),
-	State(" "),
+@app.callback(
+	Output('correlation-table', 'data'),
+	Input('left-button', 'n_clicks'),
+	State('correlation-table', 'data'),
 )
-def callbackFunction(var1, var2)
-'''
+def rollTopRow(n_clicks, data):
+	if not data:
+		data = df.to_dict('records')
+	
+	new_df = pd.DataFrame.from_records(data)
+	rows = new_df.to_numpy()
+	rows[1] = np.roll(rows[1], 1)
+	new_df = pd.DataFrame(rows)
+	return new_df.to_dict('records')
+
 
 if __name__ == '__main__':
 	app.run_server(debug = True)
