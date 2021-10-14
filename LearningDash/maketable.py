@@ -16,7 +16,10 @@ from dash.dependencies import Input, Output, State
 
 
 ## Variables:
-data = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+data = np.full((3,13), None)
+data[:,0] = np.array(['subject signal', 'comparison signal', 'correlation'])
+data[0:2,1:] = np.array([[1, 2, 2, 3, 3, 7, 4, 2, 3, 3, 1 ,3], 
+						 [3, 3, 7, 4, 2, 3, 3, 1 ,3, 1, 0, 0]])
 df = pd.DataFrame(data)
 
 
@@ -52,10 +55,6 @@ app.layout = html.Div([
 			id = 'left-button',
 			children = 'left'
 		),
-		html.Button(
-			id = 'right-button',
-			children = 'right'
-		)
 	])
 ])
 
@@ -67,7 +66,7 @@ app.layout = html.Div([
 )
 def rollTopRow(n_clicks, data):
 	if not data:
-		data = df.to_dict('records')
+		return df.to_dict('records')
 	
 	new_df = pd.DataFrame.from_records(data)
 	rows = new_df.to_numpy()
