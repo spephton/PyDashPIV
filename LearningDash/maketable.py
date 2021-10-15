@@ -31,24 +31,30 @@ app = dash.Dash(__name__)
 ## Layout
 app.layout = html.Div([
 	html.H1(
-		children='Correlation', style={
-		'textAlign': 'center'
-		}
+		children='Correlation'
 	),
 	html.Div(children='''
 		How does correlation work?
-		''', style={
-		'textAlign': 'center'
-		}
+		'''
 	),
-	dashtable.DataTable(
-		id = 'correlation-table',
-		columns = [{'name': str(i), 'id': str(i)} for i in df.columns],
-#		data = df.to_dict('records')[:],
-		css = [{
-			'selector': 'tr:first-child',
-			'rule': 'display: none',
-		}],
+	html.Div(
+		dashtable.DataTable(
+			id = 'correlation-table',
+			columns = [{'name': str(i), 'id': str(i)} for i in df.columns],
+			style_cell_conditional = [
+				{'if': {'column_id': '0'},
+				'width': '30%'},
+			],
+			css = [{
+				'selector': 'tr:first-child',
+				'rule': 'display: none',
+			}],
+		),
+		style = {'width': '80%',
+				'margin-left': 'auto',
+				'margin-right': 'auto',
+				'margin-top': '10px',
+				'margin-bottom': '10px'}
 	),
 	html.Div([
 		html.Button(
@@ -56,7 +62,10 @@ app.layout = html.Div([
 			children = 'left'
 		),
 	])
-])
+],
+style={
+		'textAlign': 'center',
+})
 
 ## Callbacks
 @app.callback(
