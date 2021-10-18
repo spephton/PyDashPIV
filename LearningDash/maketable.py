@@ -16,10 +16,10 @@ from dash.dependencies import Input, Output, State
 
 
 ## Variables:
-data = np.full((3,13), None)
-data[:,0] = np.array(['subject signal', 'comparison signal', 'correlation'])
-data[0:2,1:] = np.array([[1, 2, 2, 3, 3, 7, 4, 2, 3, 3, 1 ,3], 
-						 [3, 3, 7, 4, 2, 3, 3, 1 ,3, 1, 0, 0]])
+data = np.full((4,13), None)
+data[:,0] = np.array(['subject signal', 'comparison signal', 'elementwise product', 'correlation'])
+data[0:2,1:] = np.array([[1, 2, 2, 3, 10, 12, 7, 2, 3, 3, 1 ,3], 
+						 [9, 12, 8, 2, 3, 3, 1 ,3, 1, 0, 0, 3]])
 df = pd.DataFrame(data)
 
 
@@ -41,6 +41,12 @@ app.layout = html.Div([
 		dashtable.DataTable(
 			id = 'correlation-table',
 			columns = [{'name': str(i), 'id': str(i)} for i in df.columns],
+			style_cell={
+				'height': 'auto',
+				# all three widths are needed
+				'minWidth': '30px', 'width': '30px', 'maxWidth': '30px',
+				'whiteSpace': 'normal'
+        	},
 			style_cell_conditional = [
 				{'if': {'column_id': '0'},
 				'width': '30%'},
@@ -70,18 +76,25 @@ style={
 ## Callbacks
 @app.callback(
 	Output('correlation-table', 'data'),
+	Output('correlation-table', 'active_cell'),
 	Input('left-button', 'n_clicks'),
 	State('correlation-table', 'data'),
 )
 def rollTopRow(n_clicks, data):
 	if not data:
-		return df.to_dict('records')
+		data =  df.to_dict('records')
+	active_column = ((n_clicks or 0) % 12) + 1
 	
 	new_df = pd.DataFrame.from_records(data)
 	rows = new_df.to_numpy()
-	rows[1] = np.roll(rows[1], 1)
+	
+	rows[1, 1:] = np.roll(rows[1, 1:], 1)
+	rows[2, 1:] = np.prod(rows[0:2, 1:], 0)
+	rows[3, active_column] = sum(rows[2, 1:])
 	new_df = pd.DataFrame(rows)
-	return new_df.to_dict('records')
+	
+	active_cell = {'row': 3, 'column': active_column, 'column_id': str(active_column)}
+	return new_df.to_dict('records'), active_cell
 
 
 if __name__ == '__main__':
