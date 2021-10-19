@@ -80,7 +80,7 @@ style={
 	Input('left-button', 'n_clicks'),
 	State('correlation-table', 'data'),
 )
-def rollTopRow(n_clicks, data):
+def roll_comparison_row(n_clicks, data):
 	if not data:
 		data =  df.to_dict('records')
 	active_column = ((n_clicks or 0) % 12) + 1
